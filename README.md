@@ -20,7 +20,7 @@ Follow the steps below -
 # On Archlinux
 sudo pacman -Sy hsetroot
 
-# On Ubunut
+# On Ubuntu
 sudo apt-get update && sudo apt-get install hsetroot
 ```
 + Clone this repository and...
