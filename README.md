@@ -30,6 +30,6 @@ chmod +x install.sh
 |![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/20.png)|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/40.png)|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/60.png)|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/80.png)|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/100.png)|
 
 ### FYI
-+ Yeah, it's very simple.
-+ You can add *bwall &* to your wm autostart file to set it as wallpaper after login.
++ Yeah, it's *very simple*, i know.
++ You can add ***bwall &*** to your wm autostart file to set it as wallpaper after login.
 + Have Fun!
