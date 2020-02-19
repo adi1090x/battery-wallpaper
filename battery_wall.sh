@@ -28,11 +28,12 @@ function animate_wallpaper {
 
 function main {
 
-    BATTERY=get_battery
-    CHARGING_STATUS=is_charging
+    BATTERY=`get_battery`
+    CHARGING_STATUS=`is_charging`
+
 
     if [[ $CHARGING_STATUS == "1" ]]; then
-        animate_wall
+        animate_wallpaper
     else
         num=$(($BATTERY/20))
         set_wallpaper $num
