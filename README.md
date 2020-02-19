@@ -40,5 +40,6 @@ chmod +x install.sh
 
 ### FYI
 + Yeah, it's *very simple*, i know.
++ If you can improve it, you're welcome.
 + You can add ***bwall &*** to your wm autostart file to set it as wallpaper after login.
 + Have Fun!
