@@ -20,7 +20,7 @@ echo
 sudo mkdir -p $DES/battery-wallpaper && sudo cp -r $DIR/images $DES/battery-wallpaper && sudo cp -r $DIR/battery_wall.sh $DES/battery-wallpaper
 sudo chmod +x $DES/battery-wallpaper/battery_wall.sh
 sudo ln -s $DES/battery-wallpaper/battery_wall.sh /usr/bin/bwall
-cd .. && rm -rf battery-wallpaper
+#cd .. && rm -rf battery-wallpaper
 echo
 echo -e $Y" [*] Installed. Execute 'bwall' to Run."$C
 echo
