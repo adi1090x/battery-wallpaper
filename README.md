@@ -15,13 +15,16 @@ Simple bash script to set an animated battery as desktop wallpaper. It's shows c
 ### How to install
 Follow the steps below -
 
-+ Install *hsetroot*
++ Install *hsetroot* or *wallpaper* 
 ```
 # On Archlinux
 sudo pacman -Sy hsetroot
 
 # On Ubuntu
 sudo apt-get update && sudo apt-get install hsetroot
+
+# On MacOS
+brew install wallpaper
 ```
 + Clone this repository and...
 ```
