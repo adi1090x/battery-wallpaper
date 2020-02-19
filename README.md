@@ -6,6 +6,9 @@
   <img src="https://img.shields.io/github/stars/adi1090x/battery-wallpaper?color=red&style=flat-square">
   <img src="https://img.shields.io/github/forks/adi1090x/battery-wallpaper?style=flat-square">
   <img src="https://img.shields.io/github/issues/adi1090x/battery-wallpaper?style=flat-square">
+  <img src="https://img.shields.io/badge/Linux-Yes-yellow?style=flat-square&logo=linux">
+  <img src="https://img.shields.io/badge/Mac-Yes-green?style=flat-square&logo=apple">
+<a href="https://github.com/nadehi18/battery-wallpaper-windows" target="_blank"><img alt="undefined" src="https://img.shields.io/badge/Windows-Yes-blue?style=flat-square&logo=windows"></a>  
 </p>
 
 Simple bash script to set an animated battery as desktop wallpaper. It's shows charging animation and changes according to battery percentage.
@@ -15,13 +18,16 @@ Simple bash script to set an animated battery as desktop wallpaper. It's shows c
 ### How to install
 Follow the steps below -
 
-+ Install *hsetroot*
++ Install *hsetroot* or *wallpaper* 
 ```
 # On Archlinux
 sudo pacman -Sy hsetroot
 
 # On Ubuntu
 sudo apt-get update && sudo apt-get install hsetroot
+
+# On MacOS
+brew install wallpaper
 ```
 + Clone this repository and...
 ```

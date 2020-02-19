@@ -12,14 +12,34 @@ Y='\033[1;33m'
 
 # Path
 DIR="$(pwd)"
-DES="/usr/share"
+case "$OSTYPE" in
+       darwin*) DES="/usr/local/share" ;;
+       linux*) DES="/usr/share" ;; 
+       *) DES="/usr/share" ;;
+esac
+
+case "$OSTYPE" in
+       darwin*) BIN="/usr/local/bin" ;;
+       linux*) BIN="/usr/bin" ;; 
+       *) BIN="/usr/bin" ;;
+esac
+
+case "$OSTYPE" in
+       darwin*) SUDO="" ;;
+       linux*) SUDO="sudo" ;; 
+       *) SUDO="sudo" ;;
+esac
 
 echo
 echo -e $Y" [*] Installing... "$C
 echo
-sudo mkdir -p $DES/battery-wallpaper && sudo cp -r $DIR/images $DES/battery-wallpaper && sudo cp -r $DIR/battery_wall.sh $DES/battery-wallpaper
-sudo chmod +x $DES/battery-wallpaper/battery_wall.sh
-sudo ln -s $DES/battery-wallpaper/battery_wall.sh /usr/bin/bwall
+$SUDO mkdir -p $DES/battery-wallpaper && $SUDO cp -r $DIR/images $DES/battery-wallpaper && $SUDO cp -r $DIR/battery_wall.sh $DES/battery-wallpaper
+$SUDO chmod +x $DES/battery-wallpaper/battery_wall.sh
+# delete executable if already exist
+if [[ -f $BIN/bwall ]]; then
+    $SUDO rm $BIN/bwall    
+fi
+$SUDO ln -s $DES/battery-wallpaper/battery_wall.sh $BIN/bwall
 #cd .. && rm -rf battery-wallpaper
 echo
 echo -e $Y" [*] Installed. Execute 'bwall' to Run."$C

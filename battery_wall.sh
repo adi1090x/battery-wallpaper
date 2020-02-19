@@ -2,13 +2,31 @@
 
 ## Author : Aditya Shakya (adi1090x)
 
-DIR="/usr/share/battery-wallpaper"
+case "$OSTYPE" in
+	darwin*) DIR="/usr/local/share/battery-wallpaper" ;;
+	linux*) DIR="/usr/share/battery-wallpaper" ;;
+	*) DIR="/usr/share/battery-wallpaper" ;;
+esac
 
-BAT="$(ls /sys/class/power_supply/ | grep -i BAT | head -n 1)"
-AC="$(ls /sys/class/power_supply/ | grep -i AC | head -n 1)"
 
-BATTERY="$(cat /sys/class/power_supply/$BAT/capacity)"
-CHARGE="$(cat /sys/class/power_supply/$AC/online)"
+case "$OSTYPE" in
+	darwin*) BATTERY="$(pmset -g batt | egrep "([0-9]+\%).*" -o --colour=auto | cut -f1 -d';')" ;;
+	linux*) BAT="$(ls /sys/class/power_supply/ | grep -i BAT | head -n 1)"; BATTERY="$(cat /sys/class/power_supply/$BAT/capacity)" ;;
+	*) BATTERY_PERCENT="?" ;;
+esac
+
+case "$OSTYPE" in
+	darwin*) [[ $(pmset -g ps | head -1) =~ "AC Power" ]] && CHARGE=1 || CHARGE=0 ;;
+	linux*) AC="$(ls /sys/class/power_supply/ | grep -i AC | head -n 1)"; CHARGE=$(cat /sys/class/power_supply/$AC/online) ;;
+	*) CHARGE=0 ;;
+esac
+
+case "$OSTYPE" in 
+	darwin*) SETTER="wallpaper set" ;;
+	linux*) SETTER="hsetroot -fill" ;;
+	*) SETTER="hsetroot -fill" ;;
+esac
+
 
 function battery {
 	if [[ $CHARGE == 1 ]] && [[ $BATTERY -lt 100 ]]; then
