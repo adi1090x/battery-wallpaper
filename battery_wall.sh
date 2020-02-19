@@ -11,13 +11,15 @@ BATTERY="$(cat /sys/class/power_supply/$BAT/capacity)"
 CHARGE="$(cat /sys/class/power_supply/$AC/online)"
 
 function battery {
-	if [[ $CHARGE == 1 ]]; then
+	if [[ $CHARGE == 1 ]] && [[ $BATTERY -lt 100 ]]; then
        hsetroot -fill $DIR/images/charge_1.png ; sleep 0.8
        hsetroot -fill $DIR/images/charge_2.png ; sleep 0.8
        hsetroot -fill $DIR/images/charge_3.png ; sleep 0.8
        hsetroot -fill $DIR/images/charge_4.png ; sleep 0.8
        hsetroot -fill $DIR/images/charge_5.png ; sleep 0.8
-          
+	elif [[ $CHARGE == 1 ]] && [[ $BATTERY -eq 100 ]]; then
+       hsetroot -fill $DIR/images/charge_5.png ; sleep 5
+
 	elif [[ $BATTERY -ge 5 ]] && [[ $BATTERY -le 20 ]]; then
        hsetroot -fill $DIR/images/battery_1.png ; sleep 5
 	elif [[ $BATTERY -ge 20 ]] && [[ $BATTERY -le 40 ]]; then
