@@ -8,7 +8,6 @@ case "$OSTYPE" in
 	*) DIR="/usr/share/battery-wallpaper" ;;
 esac
 
-
 case "$OSTYPE" in
 	darwin*) BATTERY="$(pmset -g batt | egrep "([0-9]+\%).*" -o --colour=auto | cut -f1 -d';')" ;;
 	linux*) BAT="$(ls /sys/class/power_supply/ | grep -i BAT | head -n 1)"; BATTERY="$(cat /sys/class/power_supply/$BAT/capacity)" ;;
@@ -27,28 +26,36 @@ case "$OSTYPE" in
 	*) SETTER="hsetroot -fill" ;;
 esac
 
-
-function battery {
-	if [[ $CHARGE == 1 ]]; then
-	$SETTER $DIR/images/charge_1.png ; sleep 0.8
-	$SETTER $DIR/images/charge_2.png ; sleep 0.8
-	$SETTER $DIR/images/charge_3.png ; sleep 0.8
-	$SETTER $DIR/images/charge_4.png ; sleep 0.8
-	$SETTER $DIR/images/charge_5.png ; sleep 0.8
-	   
-	elif [[ "$BATTERY" -ge 5 ]] && [[ "$BATTERY" -le 20 ]]; then
-	$SETTER $DIR/images/battery_1.png ; sleep 5
-	elif [[ "$BATTERY" -ge 20 ]] && [[ "$BATTERY" -le 40 ]]; then
-	$SETTER $DIR/images/battery_2.png ; sleep 5
-	elif [[ "$BATTERY" -ge 40 ]] && [[ "$BATTERY" -le 60 ]]; then
-	$SETTER $DIR/images/battery_3.png ; sleep 5
-	elif [[ "$BATTERY" -ge 60 ]] && [[ "$BATTERY" -le 80 ]]; then
-	$SETTER $DIR/images/battery_4.png ; sleep 5
-	elif [[ "$BATTERY" -ge 80 ]] && [[ "$BATTERY" -le 100 ]]; then
-	$SETTER $DIR/images/battery_5.png ; sleep 5
-	fi
+function set_wallpaper_charge {
+    $SETTER $DIR/images/charge_$1.png
 }
 
-while true;do
-	battery && exec $DIR/battery_wall.sh
+function set_wallpaper_bat {
+    $SETTER $DIR/images/battery_$1.png
+}
+
+function animate_wallpaper {
+    for i in {1..5}; do
+        # cycle through charging images
+        set_wallpaper_charge $i; sleep 0.8
+    done
+}
+
+function main {
+	## Charging Animation
+    if [[ $CHARGE -eq "1" ]] && [[ $BATTERY -lt "100" ]]; then
+        animate_wallpaper
+    ## Stop Animation When Fully Charged
+    elif [[ $CHARGE -eq "1" ]] && [[ $BATTERY -eq "100" ]]; then
+        num="5"
+        set_wallpaper_charge $num; sleep 5
+    ## Change According To Battery Percentage
+    else
+        num=$(($BATTERY/20+"1"))
+        set_wallpaper_bat $num; sleep 5
+    fi
+}
+
+while true; do
+	main && exec $DIR/battery_wall.sh
 done

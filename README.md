@@ -38,7 +38,11 @@ chmod +x install.sh
 ./install.sh
 ```
 
-### Previews
+### Features
+
++ Shows battery charging animation.
++ Stop animation when battery is fully charged.
++ When not charging, icon changes according to battery percentage.
 
 |0-20%|20-40%|40-60%|60-80%|80-100%|
 |--|--|--|--|--|
@@ -46,6 +50,7 @@ chmod +x install.sh
 
 ### FYI
 + Yeah, it's *very simple*, i know.
++ I'll add more battery icons/wallpapers later.
 + If you can improve it, you're welcome.
 + You can add ***bwall &*** to your wm autostart file to set it as wallpaper after login.
 + Have Fun!

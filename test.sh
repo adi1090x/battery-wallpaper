@@ -2,33 +2,60 @@
 
 ## Author : Aditya Shakya (adi1090x)
 
-BAT="$(ls /sys/class/power_supply/ | grep -i BAT | head -n 1)"
-AC="$(ls /sys/class/power_supply/ | grep -i AC | head -n 1)"
+case "$OSTYPE" in
+	darwin*) DIR="$(pwd)" ;;
+	linux*) DIR="$(pwd)" ;;
+	*) DIR="$(pwd)" ;;
+esac
 
-BATTERY="$(cat /sys/class/power_supply/$BAT/capacity)"
-CHARGE="$(cat /sys/class/power_supply/$AC/online)"
+case "$OSTYPE" in
+	darwin*) BATTERY="$(pmset -g batt | egrep "([0-9]+\%).*" -o --colour=auto | cut -f1 -d';')" ;;
+	linux*) BAT="$(ls /sys/class/power_supply/ | grep -i BAT | head -n 1)"; BATTERY="$(cat /sys/class/power_supply/$BAT/capacity)" ;;
+	*) BATTERY_PERCENT="?" ;;
+esac
 
-function battery {
-	if [[ $CHARGE == 1 ]]; then
-       hsetroot -fill images/charge_1.png ; sleep 0.8
-       hsetroot -fill images/charge_2.png ; sleep 0.8
-       hsetroot -fill images/charge_3.png ; sleep 0.8
-       hsetroot -fill images/charge_4.png ; sleep 0.8
-       hsetroot -fill images/charge_5.png ; sleep 0.8
-          
-	elif [[ $BATTERY -ge 5 ]] && [[ $BATTERY -le 20 ]]; then
-       hsetroot -fill images/battery_1.png ; sleep 5
-	elif [[ $BATTERY -ge 20 ]] && [[ $BATTERY -le 40 ]]; then
-       hsetroot -fill images/battery_2.png ; sleep 5
-	elif [[ $BATTERY -ge 40 ]] && [[ $BATTERY -le 60 ]]; then
-       hsetroot -fill images/battery_3.png ; sleep 5
-	elif [[ $BATTERY -ge 60 ]] && [[ $BATTERY -le 80 ]]; then
-       hsetroot -fill images/battery_4.png ; sleep 5
-	elif [[ $BATTERY -ge 80 ]] && [[ $BATTERY -le 100 ]]; then
-       hsetroot -fill images/battery_5.png ; sleep 5
+case "$OSTYPE" in
+	darwin*) [[ $(pmset -g ps | head -1) =~ "AC Power" ]] && CHARGE=1 || CHARGE=0 ;;
+	linux*) AC="$(ls /sys/class/power_supply/ | grep -i AC | head -n 1)"; CHARGE=$(cat /sys/class/power_supply/$AC/online) ;;
+	*) CHARGE=0 ;;
+esac
+
+case "$OSTYPE" in 
+	darwin*) SETTER="wallpaper set" ;;
+	linux*) SETTER="hsetroot -fill" ;;
+	*) SETTER="hsetroot -fill" ;;
+esac
+
+function set_wallpaper_charge {
+    $SETTER $DIR/images/charge_$1.png
+}
+
+function set_wallpaper_bat {
+    $SETTER $DIR/images/battery_$1.png
+}
+
+function animate_wallpaper {
+    for i in {1..5}; do
+        # cycle through charging images
+        set_wallpaper_charge $i; sleep 0.8
+    done
+}
+
+function main {
+	## Charging Animation
+    if [[ $CHARGE -eq "1" ]] && [[ $BATTERY -lt "100" ]]; then
+        animate_wallpaper
+    ## Stop Animation When Fully Charged
+    elif [[ $CHARGE -eq "1" ]] && [[ $BATTERY -eq "100" ]]; then
+        num="5"
+        set_wallpaper_charge $num; sleep 5
+    ## Change According To Battery Percentage
+    else
+        num=$(($BATTERY/20+"1"))
+        set_wallpaper_bat $num; sleep 5
     fi
 }
 
-while true;do
-	battery && exec $(pwd)/test.sh
+while true; do
+	main && exec $(pwd)/test.sh
 done
