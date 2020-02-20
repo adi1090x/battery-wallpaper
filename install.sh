@@ -33,7 +33,7 @@ esac
 echo
 echo -e $Y" [*] Installing... "$C
 echo
-# delete old if already exist
+# delete old dir if already exist
 if [[ -d $DES/battery-wallpaper ]]; then
     $SUDO rm -rf $DES/battery-wallpaper    
 fi
