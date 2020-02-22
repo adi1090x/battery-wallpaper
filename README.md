@@ -39,6 +39,8 @@ chmod +x install.sh
 ```
 + Run the program and choose an option
 ```
+$ bwall
+
 Battery Wallpaper V1.0
 Developed By - Aditya Shakya (@adi1090x)
 
@@ -60,7 +62,7 @@ Available options:
 
 ### Previews
 
-#### Animations
+#### Charging
 
 |Cup|Paper|Cartoon|
 |--|--|--|
@@ -74,7 +76,7 @@ Available options:
 |--|--|--|
 |![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/6/charge.gif)|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/7/charge.gif)|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/8/charge.gif)|
 
-#### Percentage
+#### Discharging
 
 ***Cup***
 
