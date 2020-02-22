@@ -37,20 +37,115 @@ cd battery-wallpaper
 chmod +x install.sh
 ./install.sh
 ```
++ Run the program and choose an option
+```
+Battery Wallpaper V1.0
+Developed By - Aditya Shakya (@adi1090x)
+
+Available options:
+-cartoon	-colours	-cup_black
+-cup_dark	-egg		-faded
+-industrial	-mechanical	-paper
+-slash
+
+```
 
 ### Features
 
++ 10 different types of battery wallpapers/icons.
 + Shows battery charging animation.
 + Stop animation when battery is fully charged.
 + When not charging, icon changes according to battery percentage.
 
+
+### Previews
+
+#### Animations
+
+|Cup|Paper|Cartoon|
+|--|--|--|
+|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/0/charge.gif)|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/1/charge.gif)|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/2/charge.gif)|
+
+|Faded|Colours|Slash|
+|--|--|--|
+|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/3/charge.gif)|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/4/charge.gif)|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/5/charge.gif)|
+
+|Industrial|Egg|Mechanical|
+|--|--|--|
+|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/6/charge.gif)|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/7/charge.gif)|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/8/charge.gif)|
+
+#### Percentage
+
+***Cup***
+
 |0-20%|20-40%|40-60%|60-80%|80-100%|
 |--|--|--|--|--|
-|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/20.png)|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/40.png)|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/60.png)|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/80.png)|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/100.png)|
+|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/0/1.png)|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/0/2.png))|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/0/3.png))|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/0/4.png))|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/0/5.png))|
+
+***Colours***
+
+|0-20%|20-40%|40-60%|60-80%|80-100%|
+|--|--|--|--|--|
+|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/4/1.png)|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/4/2.png))|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/4/3.png))|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/4/4.png))|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/4/5.png))|
+
+***Slash***
+
+|0-20%|20-40%|40-60%|60-80%|80-100%|
+|--|--|--|--|--|
+|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/5/1.png)|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/5/2.png))|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/5/3.png))|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/5/4.png))|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/5/5.png))|
+
+***Industrial***
+
+|0-20%|20-40%|40-60%|60-80%|80-100%|
+|--|--|--|--|--|
+|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/6/1.png)|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/6/2.png))|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/6/3.png))|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/6/4.png))|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/6/5.png))|
+
+***Paper***
+
+|0-25%|25-50%|50-75%|75-100%|
+|--|--|--|--|
+|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/1/1.png)|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/1/2.png))|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/1/3.png))|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/1/4.png))|
+
+***Cartoon***
+
+|0-25%|25-50%|50-75%|75-100%|
+|--|--|--|--|
+|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/2/1.png)|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/2/2.png))|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/2/3.png))|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/2/4.png))|
+
+***Faded***
+
+|0-25%|25-50%|50-75%|75-100%|
+|--|--|--|--|
+|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/3/1.png)|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/3/2.png))|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/3/3.png))|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/3/4.png))|
+
+***Egg***
+
+|0-25%|25-50%|50-75%|75-100%|
+|--|--|--|--|
+|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/7/1.png)|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/7/2.png))|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/7/3.png))|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/7/4.png))|
+
+***Mechanical***
+
+|0-25%|25-50%|50-75%|75-100%|
+|--|--|--|--|
+|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/8/1.png)|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/8/2.png))|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/8/3.png))|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/8/4.png))|
+
+#### Fully Charged
+
+|Cup|Paper|Cartoon|
+|--|--|--|
+|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/0.png)|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/1.png)|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/2.png)|
+
+|Faded|Colours|Slash|
+|--|--|--|
+|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/3.png)|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/4.png)|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/5.png)|
+
+|Industrial|Egg|Mechanical|
+|--|--|--|
+|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/6.png)|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/7.png)|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/8.png)|
 
 ### FYI
 + Yeah, it's *very simple*, i know.
-+ I'll add more battery icons/wallpapers later.
 + If you can improve it, you're welcome.
 + You can add ***bwall &*** to your wm autostart file to set it as wallpaper after login.
 + Have Fun!
