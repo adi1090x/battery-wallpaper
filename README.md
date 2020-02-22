@@ -142,5 +142,5 @@ Available options:
 ### FYI
 + Yeah, it's *very simple*, i know.
 + If you can improve it, you're welcome.
-+ You can add ***bwall &*** to your wm autostart file to set it as wallpaper after login.
++ You can add ***bwall -option &*** to your wm autostart file to set it as wallpaper after login.
 + Have Fun!
