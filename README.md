@@ -141,6 +141,8 @@ Available options:
 
 ### FYI
 + Yeah, it's *very simple*, i know.
++ I've tested it only on Window Managers (Openbox, i3wm, fluxbox, etc)
++ Currently, Not Working on XFCE & Maybe on KDE too.
 + If you can improve it, you're welcome.
 + You can add ***bwall -option &*** to your wm autostart file to set it as wallpaper after login.
 + Have Fun!
