@@ -13,7 +13,7 @@
 
 Simple bash script to set an animated battery as desktop wallpaper. It's shows charging animation and changes according to battery percentage.
 
-![gif](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/charging.gif) <br />
+![gif](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/charge.gif) <br />
 
 ### How to install
 Follow the steps below -
