@@ -52,7 +52,7 @@ Available options:
 
 ```
 
-> For swaywm support users must install `oguri`. The `oguri` daemon must be started. To do so add `swaybg_command oguri-swaybg` to your config
+> For swaywm support users must install `oguri`. The `oguri` daemon must be started for the script to work.
 
 ### Features
 
