@@ -25,8 +25,8 @@ esac
 
 case "$OSTYPE" in 
 	darwin*) SETTER="wallpaper set" ;;
-	linux*) SETTER="hsetroot -fill" ;;
-	*) SETTER="hsetroot -fill" ;;
+	linux*) if [ -n "$SWAYSOCK" ]; then SETTER="eval ogurictl output '*' --image"; else SETTER="hsetroot -fill"; fi ;;
+	*) if [ -n "$SWAYSOCK" ]; then SETTER="eval ogurictl output '*' --image"; else SETTER="hsetroot -fill"; fi ;;
 esac
 
 ## Style 1 - Cartoon #############################################
