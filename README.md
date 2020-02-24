@@ -52,6 +52,8 @@ Available options:
 
 ```
 
+> For swaywm support users must install `oguri`. The `oguri` daemon must be started. To do so add `swaybg_command oguri-swaybg` to your config
+
 ### Features
 
 + 10 different types of battery wallpapers/icons.
