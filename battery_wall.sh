@@ -13,13 +13,13 @@ esac
 
 case "$OSTYPE" in
 	darwin*) BATTERY="$(pmset -g batt | egrep "([0-9]+\%).*" -o --colour=auto | cut -f1 -d';')" ;;
-	linux*) BAT="$(ls /sys/class/power_supply/ | grep -i BAT | head -n 1)"; BATTERY="$(cat /sys/class/power_supply/$BAT/capacity)" ;;
+	linux*) BATTERY="$(acpi | awk -F ' ' '{print $4}' | tr -d \%,)" ;;
 	*) BATTERY_PERCENT="?" ;;
 esac
 
 case "$OSTYPE" in
 	darwin*) [[ $(pmset -g ps | head -1) =~ "AC Power" ]] && CHARGE=1 || CHARGE=0 ;;
-	linux*) AC="$(ls /sys/class/power_supply/ | grep -i AC | head -n 1)"; CHARGE=$(cat /sys/class/power_supply/$AC/online) ;;
+	linux*) CHARGE=$(acpi | awk -F ' ' '{print $3}' | tr -d \,) ;;
 	*) CHARGE=0 ;;
 esac
 
@@ -48,10 +48,10 @@ function animate_wallpaper {
 
 function main {
 	## Charging Animation
-    if [[ $CHARGE -eq "1" ]] && [[ $BATTERY -lt "100" ]]; then
+    if [[ $CHARGE = *"Charging"* ]] && [[ $BATTERY -lt "100" ]]; then
         animate_wallpaper
     ## Stop Animation When Fully Charged
-    elif [[ $CHARGE -eq "1" ]] && [[ $BATTERY -eq "100" ]]; then
+    elif [[ $CHARGE = *"Charging"* ]] && [[ $BATTERY -eq "100" ]]; then
         $SETTER $DIR/images/cartoon/charge.png; sleep 5
     ## Change According To Battery Percentage
     else
@@ -83,10 +83,10 @@ function animate_wallpaper {
 
 function main {
 	## Charging Animation
-    if [[ $CHARGE -eq "1" ]] && [[ $BATTERY -lt "100" ]]; then
+    if [[ $CHARGE = *"Charging"* ]] && [[ $BATTERY -lt "100" ]]; then
         animate_wallpaper
     ## Stop Animation When Fully Charged
-    elif [[ $CHARGE -eq "1" ]] && [[ $BATTERY -eq "100" ]]; then
+    elif [[ $CHARGE = *"Charging"* ]] && [[ $BATTERY -eq "100" ]]; then
         num="5"
         set_wallpaper_charge $num; sleep 5
     ## Change According To Battery Percentage
@@ -119,10 +119,10 @@ function animate_wallpaper {
 
 function main {
 	## Charging Animation
-    if [[ $CHARGE -eq "1" ]] && [[ $BATTERY -lt "100" ]]; then
+    if [[ $CHARGE = *"Charging"* ]] && [[ $BATTERY -lt "100" ]]; then
         animate_wallpaper
     ## Stop Animation When Fully Charged
-    elif [[ $CHARGE -eq "1" ]] && [[ $BATTERY -eq "100" ]]; then
+    elif [[ $CHARGE = *"Charging"* ]] && [[ $BATTERY -eq "100" ]]; then
         num="5"
         set_wallpaper_charge $num; sleep 5
     ## Change According To Battery Percentage
@@ -155,10 +155,10 @@ function animate_wallpaper {
 
 function main {
 	## Charging Animation
-    if [[ $CHARGE -eq "1" ]] && [[ $BATTERY -lt "100" ]]; then
+    if [[ $CHARGE = *"Charging"* ]] && [[ $BATTERY -lt "100" ]]; then
         animate_wallpaper
     ## Stop Animation When Fully Charged
-    elif [[ $CHARGE -eq "1" ]] && [[ $BATTERY -eq "100" ]]; then
+    elif [[ $CHARGE = *"Charging"* ]] && [[ $BATTERY -eq "100" ]]; then
         num="5"
         set_wallpaper_charge $num; sleep 5
     ## Change According To Battery Percentage
@@ -191,10 +191,10 @@ function animate_wallpaper {
 
 function main {
 	## Charging Animation
-    if [[ $CHARGE -eq "1" ]] && [[ $BATTERY -lt "100" ]]; then
+    if [[ $CHARGE = *"Charging"* ]] && [[ $BATTERY -lt "100" ]]; then
         animate_wallpaper
     ## Stop Animation When Fully Charged
-    elif [[ $CHARGE -eq "1" ]] && [[ $BATTERY -eq "100" ]]; then
+    elif [[ $CHARGE = *"Charging"* ]] && [[ $BATTERY -eq "100" ]]; then
         num="4"
         set_wallpaper_charge $num; sleep 5
     ## Change According To Battery Percentage
@@ -227,10 +227,10 @@ function animate_wallpaper {
 
 function main {
 	## Charging Animation
-    if [[ $CHARGE -eq "1" ]] && [[ $BATTERY -lt "100" ]]; then
+    if [[ $CHARGE = *"Charging"* ]] && [[ $BATTERY -lt "100" ]]; then
         animate_wallpaper
     ## Stop Animation When Fully Charged
-    elif [[ $CHARGE -eq "1" ]] && [[ $BATTERY -eq "100" ]]; then
+    elif [[ $CHARGE = *"Charging"* ]] && [[ $BATTERY -eq "100" ]]; then
         $SETTER $DIR/images/faded/charge.png; sleep 5
     ## Change According To Battery Percentage
     else
@@ -262,10 +262,10 @@ function animate_wallpaper {
 
 function main {
 	## Charging Animation
-    if [[ $CHARGE -eq "1" ]] && [[ $BATTERY -lt "100" ]]; then
+    if [[ $CHARGE = *"Charging"* ]] && [[ $BATTERY -lt "100" ]]; then
         animate_wallpaper
     ## Stop Animation When Fully Charged
-    elif [[ $CHARGE -eq "1" ]] && [[ $BATTERY -eq "100" ]]; then
+    elif [[ $CHARGE = *"Charging"* ]] && [[ $BATTERY -eq "100" ]]; then
         num="5"
         set_wallpaper_charge $num; sleep 5
     ## Change According To Battery Percentage
@@ -298,10 +298,10 @@ function animate_wallpaper {
 
 function main {
 	## Charging Animation
-    if [[ $CHARGE -eq "1" ]] && [[ $BATTERY -lt "100" ]]; then
+    if [[ $CHARGE = *"Charging"* ]] && [[ $BATTERY -lt "100" ]]; then
         animate_wallpaper
     ## Stop Animation When Fully Charged
-    elif [[ $CHARGE -eq "1" ]] && [[ $BATTERY -eq "100" ]]; then
+    elif [[ $CHARGE = *"Charging"* ]] && [[ $BATTERY -eq "100" ]]; then
         $SETTER $DIR/images/mechanical/charge.png; sleep 5
     ## Change According To Battery Percentage
     else
@@ -333,10 +333,10 @@ function animate_wallpaper {
 
 function main {
 	## Charging Animation
-    if [[ $CHARGE -eq "1" ]] && [[ $BATTERY -lt "100" ]]; then
+    if [[ $CHARGE = *"Charging"* ]] && [[ $BATTERY -lt "100" ]]; then
         animate_wallpaper
     ## Stop Animation When Fully Charged
-    elif [[ $CHARGE -eq "1" ]] && [[ $BATTERY -eq "100" ]]; then
+    elif [[ $CHARGE = *"Charging"* ]] && [[ $BATTERY -eq "100" ]]; then
         $SETTER $DIR/images/paper/charge.png; sleep 5
     ## Change According To Battery Percentage
     else
@@ -368,10 +368,10 @@ function animate_wallpaper {
 
 function main {
 	## Charging Animation
-    if [[ $CHARGE -eq "1" ]] && [[ $BATTERY -lt "100" ]]; then
+    if [[ $CHARGE = *"Charging"* ]] && [[ $BATTERY -lt "100" ]]; then
         animate_wallpaper
     ## Stop Animation When Fully Charged
-    elif [[ $CHARGE -eq "1" ]] && [[ $BATTERY -eq "100" ]]; then
+    elif [[ $CHARGE = *"Charging"* ]] && [[ $BATTERY -eq "100" ]]; then
         num="5"
         set_wallpaper_charge $num; sleep 5
     ## Change According To Battery Percentage
