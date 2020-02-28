@@ -22,13 +22,13 @@ Simple bash script to set an animated battery as desktop wallpaper. It's shows c
 ### How to install
 Follow the steps below -
 
-+ Install *hsetroot* or *wallpaper* 
++ Install *acpi*, *hsetroot* or *wallpaper* 
 ```
 # On Archlinux
-sudo pacman -Sy hsetroot
+sudo pacman -Sy acpi hsetroot
 
-# On Ubuntu
-sudo apt-get update && sudo apt-get install hsetroot
+# On Ubuntu or Debian
+sudo apt-get install acpi hsetroot
 
 # On MacOS
 brew install wallpaper
@@ -65,6 +65,7 @@ Available options:
 + Shows battery charging animation.
 + Stop animation when battery is fully charged.
 + When not charging, icon changes according to battery percentage.
++ Tested on *Openbox*, *i3wm*, *Fluxbox*, *Fvwm* & *Swaywm*.
 
 #### Charging
 
