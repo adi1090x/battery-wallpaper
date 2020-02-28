@@ -56,7 +56,7 @@ Available options:
 
 ```
 
-> For swaywm support users must install `oguri`. The `oguri` daemon must be started for the script to work.
++ For swaywm support users must install [oguri](https://github.com/vilhalmer/oguri). The `oguri` daemon must be started for the script to work. `Oguri` can be installed on Arch linux via [AUR](https://aur.archlinux.org/packages/oguri-git/).
 
 ### Features
 
