@@ -38,7 +38,7 @@ if [[ -d $DES/battery-wallpaper ]]; then
     $SUDO rm -rf $DES/battery-wallpaper    
 fi
 # delete executable if it exists
-if [[ -f $BIN/bwall ]]; then
+if [[ -L $BIN/bwall ]]; then
     $SUDO rm $BIN/bwall    
 fi
 echo
