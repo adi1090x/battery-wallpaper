@@ -56,6 +56,8 @@ Available options:
 
 ```
 
+> For swaywm support users must install `oguri`. The `oguri` daemon must be started for the script to work.
+
 ### Features
 
 + 10 different types of battery wallpapers/icons.
