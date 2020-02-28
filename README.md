@@ -33,6 +33,8 @@ sudo apt-get update && sudo apt-get install hsetroot
 # On MacOS
 brew install wallpaper
 ```
++ *For swaywm support users must install [oguri](https://github.com/vilhalmer/oguri). The `oguri` daemon must be started for the script to work. `Oguri` can be installed on Arch linux via [AUR](https://aur.archlinux.org/packages/oguri-git/).*
+
 + Clone this repository and...
 ```
 cd $HOME
@@ -41,6 +43,7 @@ cd battery-wallpaper
 chmod +x install.sh
 ./install.sh
 ```
+
 + Run the program and choose an option
 ```
 $ bwall
@@ -55,8 +58,6 @@ Available options:
 -slash
 
 ```
-
-+ For swaywm support users must install [oguri](https://github.com/vilhalmer/oguri). The `oguri` daemon must be started for the script to work. `Oguri` can be installed on Arch linux via [AUR](https://aur.archlinux.org/packages/oguri-git/).
 
 ### Features
 
