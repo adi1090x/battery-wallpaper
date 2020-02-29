@@ -25,8 +25,8 @@ esac
 
 case "$OSTYPE" in 
 	darwin*) SETTER="wallpaper set" ;;
-	linux*) if [ -n "$SWAYSOCK" ]; then SETTER="eval ogurictl output '*' --image"; else SETTER="hsetroot -fill"; fi ;;
-	*) if [ -n "$SWAYSOCK" ]; then SETTER="eval ogurictl output '*' --image"; else SETTER="hsetroot -fill"; fi ;;
+	linux*) if [ -n "$SWAYSOCK" ]; then SETTER="eval ogurictl output '*' --image"; elif [[ "$DESKTOP_SESSION" = "mate" ]]; then SETTER="gsettings set org.mate.background picture-filename"; else SETTER="hsetroot -fill"; fi ;;
+	*) if [ -n "$SWAYSOCK" ]; then SETTER="eval ogurictl output '*' --image"; elif [[ "$DESKTOP_SESSION" = "mate" ]]; then SETTER="gsettings set org.mate.background picture-filename"; else SETTER="hsetroot -fill"; fi ;;
 esac
 
 ## Style 1 - Cartoon #############################################
