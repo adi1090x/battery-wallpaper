@@ -55,13 +55,13 @@ Available options:
 -cartoon	-colours	-cup_black
 -cup_dark	-egg		-faded
 -industrial	-mechanical	-paper
--slash
+-slash  -bonsai
 
 ```
 
 ### Features
 
-+ 10 different types of battery wallpapers/icons.
++ 11 different types of battery wallpapers/icons.
 + Shows battery charging animation.
 + Stop animation when battery is fully charged.
 + When not charging, icon changes according to battery percentage.
