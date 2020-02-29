@@ -55,7 +55,7 @@ Available options:
 -cartoon	-colours	-cup_black
 -cup_dark	-egg		-faded
 -industrial	-mechanical	-paper
--slash  -bonsai
+-slash		-bonsai
 
 ```
 
