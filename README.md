@@ -141,6 +141,12 @@ Available options:
 |--|--|--|--|
 |![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/8/1.png)|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/8/2.png)|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/8/3.png)|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/8/4.png)|
 
+***Bonsai***
+
+|0-10%|10-20%|20-30%|30-40%|40-50%|50-60%|60-70%|70-80%|80-90%|90-100%|
+|--|--|--|--|--|--|--|--|--|--|
+|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/9/1.png)|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/9/1.png)|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/9/2.png)|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/9/3.png)|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/9/4.png)|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/9/5.png)|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/9/6.png)|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/9/7.png)|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/9/8.png)|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/9/9.png)|
+
 #### Fully Charged
 
 |Cup|Paper|Cartoon|Faded|Colours|
