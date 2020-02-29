@@ -13,13 +13,13 @@ esac
 
 case "$OSTYPE" in
 	darwin*) BATTERY="$(pmset -g batt | egrep "([0-9]+\%).*" -o --colour=auto | cut -f1 -d';')" ;;
-	linux*) BATTERY="$(acpi | awk -F ' ' '{print $4}' | tr -d \%,)" ;;
+	linux*) BATTERY="$(acpi | awk -F ' ' 'END {print $4}' | tr -d \%,)" ;;
 	*) BATTERY_PERCENT="?" ;;
 esac
 
 case "$OSTYPE" in
 	darwin*) [[ $(pmset -g ps | head -1) =~ "AC Power" ]] && CHARGE=1 || CHARGE=0 ;;
-	linux*) CHARGE=$(acpi | awk -F ' ' '{print $3}' | tr -d \,) ;;
+	linux*) CHARGE=$(acpi | awk -F ' ' 'END {print $3}' | tr -d \,) ;;
 	*) CHARGE=0 ;;
 esac
 
