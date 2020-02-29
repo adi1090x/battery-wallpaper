@@ -67,7 +67,7 @@ Available options:
 + When not charging, icon changes according to battery percentage.
 + Tested on *Openbox*, *i3wm*, *Fluxbox*, *Fvwm* & *Swaywm*.
 
-#### Charging
+### Charging
 
 |Cup|Paper|Cartoon|Faded|
 |--|--|--|--|
@@ -81,7 +81,7 @@ Available options:
 |--|--|
 |![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/8/charge.gif)|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/9/charge.gif)|
 
-#### Discharging
+### Discharging
 
 ***Cup***
 
@@ -143,7 +143,7 @@ Available options:
 |--|--|--|--|--|--|--|--|--|
 |![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/9/1.png)|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/9/2.png)|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/9/3.png)|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/9/4.png)|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/9/5.png)|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/9/6.png)|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/9/7.png)|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/9/8.png)|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/9/9.png)|
 
-#### Fully Charged
+### Fully Charged
 
 |Cup|Paper|Cartoon|Faded|Colours|
 |--|--|--|--|--|
