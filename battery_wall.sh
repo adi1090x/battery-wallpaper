@@ -385,6 +385,42 @@ while true; do
 	main && exec $DIR/battery_wall.sh -slash
 done
 
+## Style 11 - Bonsai #############################################
+elif  [[ $1 = "-bonsai" ]]; then
+function set_wallpaper_charge {
+    $SETTER $DIR/images/bonsai/battery_$1.png
+}
+
+function set_wallpaper_bat {
+    $SETTER $DIR/images/bonsai/battery_$1.png
+}
+
+function animate_wallpaper {
+    for i in {1,10}; do
+        # cycle through charging images
+        set_wallpaper_charge $i; sleep 0.8
+    done
+}
+
+function main {
+	## Charging Animation
+    if [[ $CHARGE = *"Charging"* ]] && [[ $BATTERY -lt "100" ]]; then
+        animate_wallpaper
+    ## Stop Animation When Fully Charged
+    elif [[ $CHARGE = *"Charging"* ]] && [[ $BATTERY -eq "100" ]]; then
+        num="10"
+        set_wallpaper_charge $num; sleep 5
+    ## Change According To Battery Percentage
+    else
+        num=$(($BATTERY/10))
+        set_wallpaper_bat $num; sleep 5
+    fi
+}
+
+while true; do
+	main && exec $(pwd)/test.sh -bonsai
+done
+
 ## Else Show This #############################################
 else
 echo "Battery Wallpaper V1.0
@@ -394,6 +430,6 @@ Available options:
 -cartoon	-colours	-cup_black
 -cup_dark	-egg		-faded
 -industrial	-mechanical	-paper
--slash
+-slash		-bonsai
 "
 fi
