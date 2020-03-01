@@ -33,11 +33,13 @@ case "$OSTYPE" in
 	elif [[ $(tr "[:upper:]" "[:lower:]" <<<"$DESKTOP_SESSION") = $(tr "[:upper:]" "[:lower:]" <<<"mate") ]]; then SETTER="gsettings set org.mate.background picture-filename"; 
 	elif [[ $(tr "[:upper:]" "[:lower:]" <<<"$DESKTOP_SESSION") = $(tr "[:upper:]" "[:lower:]" <<<"Xfce Session") ]]; then SETTER="xfconf-query --channel xfce4-desktop --property /backdrop/screen$SCREEN/monitor$MONITOR/workspace0/last-image --set"; 
 	elif [[ $(tr "[:upper:]" "[:lower:]" <<<"$DESKTOP_SESSION") = $(tr "[:upper:]" "[:lower:]" <<<"LXDE") ]]; then SETTER="pcmanfm --set-wallpaper"; 
+	elif [[ $(tr "[:upper:]" "[:lower:]" <<<"$DESKTOP_SESSION") = $(tr "[:upper:]" "[:lower:]" <<<"pantheon") ]]; then SETTER="gsettings set org.gnome.desktop.background picture-uri"; 
 	else SETTER="hsetroot -fill"; fi ;;
 	*) if [ -n "$SWAYSOCK" ]; then SETTER="eval ogurictl output '*' --image"; 
 	elif [[ $(tr "[:upper:]" "[:lower:]" <<<"$DESKTOP_SESSION") = $(tr "[:upper:]" "[:lower:]" <<<"mate") ]]; then SETTER="gsettings set org.mate.background picture-filename"; 
 	elif [[ $(tr "[:upper:]" "[:lower:]" <<<"$DESKTOP_SESSION") = $(tr "[:upper:]" "[:lower:]" <<<"Xfce Session") ]]; then SETTER="xfconf-query --channel xfce4-desktop --property /backdrop/screen$SCREEN/monitor$MONITOR/workspace0/last-image --set"; 
 	elif [[ $(tr "[:upper:]" "[:lower:]" <<<"$DESKTOP_SESSION") = $(tr "[:upper:]" "[:lower:]" <<<"LXDE") ]]; then SETTER="pcmanfm --set-wallpaper"; 
+	elif [[ $(tr "[:upper:]" "[:lower:]" <<<"$DESKTOP_SESSION") = $(tr "[:upper:]" "[:lower:]" <<<"pantheon") ]]; then SETTER="gsettings set org.gnome.desktop.background picture-uri"; 
 	else SETTER="hsetroot -fill"; fi ;;
 esac
 
