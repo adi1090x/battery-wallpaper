@@ -160,9 +160,7 @@ Available options:
 </p>
 
 ### FYI
-+ Yeah, it's *very simple*, i know.
-+ I've tested it only on Window Managers (Openbox, i3wm, fluxbox, etc)
-+ Currently, Not Working on XFCE & Maybe on KDE too.
++ Currently, KDE is not supported.
 + If you can improve it, you're welcome.
 + You can add ***bwall -option &*** to your wm autostart file to set it as wallpaper after login.
 + Have Fun!
