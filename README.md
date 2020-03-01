@@ -65,6 +65,7 @@ Available options:
 + Shows battery charging animation.
 + Stop animation when battery is fully charged.
 + When not charging, icon changes according to battery percentage.
++ Support dual or more batteries.
 + Tested on *Openbox*, *i3wm*, *Fluxbox*, *Fvwm*, *Swaywm* & *MATE*.
 
 ### Charging
