@@ -66,7 +66,7 @@ Available options:
 + Stop animation when battery is fully charged.
 + When not charging, icon changes according to battery percentage.
 + Support dual or more batteries.
-+ Tested on **WM:** *Openbox*, *i3wm*, *Fluxbox*, *Fvwm*, *Swaywm* & **DE:** *XFCE*, *MATE*.
++ Tested on **WM:** *Openbox*, *i3wm*, *Fluxbox*, *Fvwm*, *Swaywm* & **DE:** *XFCE*, *LXDE*, *MATE*.
 
 ### Charging
 
