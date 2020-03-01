@@ -23,10 +23,14 @@ case "$OSTYPE" in
 	*) CHARGE=0 ;;
 esac
 
+## For XFCE
+SCREEN="$(xrandr --listactivemonitors | awk -F ' ' 'END {print $1}' | tr -d \:)"
+MONITOR="$(xrandr --listactivemonitors | awk -F ' ' 'END {print $2}' | tr -d \*+)"
+
 case "$OSTYPE" in 
 	darwin*) SETTER="wallpaper set" ;;
-	linux*) if [ -n "$SWAYSOCK" ]; then SETTER="eval ogurictl output '*' --image"; elif [[ $(tr "[:upper:]" "[:lower:]" <<<"$DESKTOP_SESSION") = $(tr "[:upper:]" "[:lower:]" <<<"mate") ]]; then SETTER="gsettings set org.mate.background picture-filename"; else SETTER="hsetroot -fill"; fi ;;
-	*) if [ -n "$SWAYSOCK" ]; then SETTER="eval ogurictl output '*' --image"; elif [[ $(tr "[:upper:]" "[:lower:]" <<<"$DESKTOP_SESSION") = $(tr "[:upper:]" "[:lower:]" <<<"mate") ]]; then SETTER="gsettings set org.mate.background picture-filename"; else SETTER="hsetroot -fill"; fi ;;
+	linux*) if [ -n "$SWAYSOCK" ]; then SETTER="eval ogurictl output '*' --image"; elif [[ $(tr "[:upper:]" "[:lower:]" <<<"$DESKTOP_SESSION") = $(tr "[:upper:]" "[:lower:]" <<<"mate") ]]; then SETTER="gsettings set org.mate.background picture-filename"; elif [[ $(tr "[:upper:]" "[:lower:]" <<<"$DESKTOP_SESSION") = $(tr "[:upper:]" "[:lower:]" <<<"Xfce Session") ]]; then SETTER="xfconf-query --channel xfce4-desktop --property /backdrop/screen$SCREEN/monitor$MONITOR/workspace0/last-image --set"; else SETTER="hsetroot -fill"; fi ;;
+	*) if [ -n "$SWAYSOCK" ]; then SETTER="eval ogurictl output '*' --image"; elif [[ $(tr "[:upper:]" "[:lower:]" <<<"$DESKTOP_SESSION") = $(tr "[:upper:]" "[:lower:]" <<<"mate") ]]; then SETTER="gsettings set org.mate.background picture-filename"; elif [[ $(tr "[:upper:]" "[:lower:]" <<<"$DESKTOP_SESSION") = $(tr "[:upper:]" "[:lower:]" <<<"Xfce Session") ]]; then SETTER="xfconf-query --channel xfce4-desktop --property /backdrop/screen$SCREEN/monitor$MONITOR/workspace0/last-image --set"; else SETTER="hsetroot -fill"; fi ;;
 esac
 
 ## Style 1 - Cartoon #############################################
