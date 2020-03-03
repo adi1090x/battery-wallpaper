@@ -57,7 +57,6 @@ Available options:
 -industrial	-mechanical	-paper
 -slash		-bonsai		-city
 -space
-
 ```
 
 ### Features
