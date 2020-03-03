@@ -71,17 +71,13 @@ Available options:
 
 ### Charging
 
-|Cup|Paper|Cartoon|Faded|
-|--|--|--|--|
-|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/0/charge.gif)|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/1/charge.gif)|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/2/charge.gif)|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/3/charge.gif)|
+|Cup|Paper|Cartoon|Faded|Colours|Slash|
+|--|--|--|--|--|--|
+|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/0/charge.gif)|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/1/charge.gif)|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/2/charge.gif)|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/3/charge.gif)|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/4/charge.gif)|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/5/charge.gif)|
 
-|Colours|Slash|Industrial|Egg|
-|--|--|--|--|
-|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/4/charge.gif)|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/5/charge.gif)|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/6/charge.gif)|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/7/charge.gif)|
-
-|Mechanical|Bonsai|
-|--|--|
-|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/8/charge.gif)|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/9/charge.gif)|
+|Industrial|Egg|Mechanical|Bonsai|City|Space|
+|--|--|--|--|--|--|
+|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/6/charge.gif)|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/7/charge.gif)|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/8/charge.gif)|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/9/charge.gif)|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/10/charge.gif)|![img](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/11/charge.gif)|
 
 ### Discharging
 
