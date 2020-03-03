@@ -20,7 +20,7 @@ Simple bash script to set an animated battery as desktop wallpaper. It's shows c
 ![gif](https://raw.githubusercontent.com/adi1090x/battery-wallpaper/master/preview/charge.gif) <br />
 
 ### How to install
-Follow the steps below -
+Follow the steps below (You can run *test.sh* to test it before installing it on your system) -
 
 + Install *acpi*, *xrandr*, *hsetroot* or *wallpaper* 
 ```

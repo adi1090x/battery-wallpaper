@@ -45,18 +45,15 @@ esac
 
 ## Style 1 - Cartoon #############################################
 if  [[ $1 = "-cartoon" ]]; then
-function set_wallpaper_charge {
-    $SETTER $DIR/images/cartoon/battery_$1.png
-}
 
-function set_wallpaper_bat {
+function set_wallpaper {
     $SETTER $DIR/images/cartoon/battery_$1.png
 }
 
 function animate_wallpaper {
     for i in {1..4}; do
         # cycle through charging images
-        set_wallpaper_charge $i; sleep 0.8
+        set_wallpaper $i; sleep 0.8
     done
 }
 
@@ -65,12 +62,13 @@ function main {
     if [[ $CHARGE = *"Charging"* ]] && [[ $BATTERY -lt "100" ]]; then
         animate_wallpaper
     ## Stop Animation When Fully Charged
-    elif [[ $CHARGE = *"Charging"* ]] && [[ $BATTERY -eq "100" ]]; then
-        $SETTER $DIR/images/cartoon/charge.png; sleep 5
+    elif [[ $BATTERY -eq "100" ]]; then
+        img="5"
+        set_wallpaper $img; sleep 5
     ## Change According To Battery Percentage
     else
         num=$(($BATTERY/25+1))
-        set_wallpaper_bat $num; sleep 5
+        set_wallpaper $num; sleep 5
     fi
 }
 
@@ -80,18 +78,15 @@ done
 
 ## Style 2 - colours #############################################
 elif  [[ $1 = "-colours" ]]; then
-function set_wallpaper_charge {
-    $SETTER $DIR/images/colours/battery_$1.png
-}
 
-function set_wallpaper_bat {
+function set_wallpaper {
     $SETTER $DIR/images/colours/battery_$1.png
 }
 
 function animate_wallpaper {
     for i in {1..5}; do
         # cycle through charging images
-        set_wallpaper_charge $i; sleep 0.8
+        set_wallpaper $i; sleep 0.8
     done
 }
 
@@ -100,13 +95,13 @@ function main {
     if [[ $CHARGE = *"Charging"* ]] && [[ $BATTERY -lt "100" ]]; then
         animate_wallpaper
     ## Stop Animation When Fully Charged
-    elif [[ $CHARGE = *"Charging"* ]] && [[ $BATTERY -eq "100" ]]; then
-        num="5"
-        set_wallpaper_charge $num; sleep 5
+    elif [[ $BATTERY -eq "100" ]]; then
+        img="5"
+        set_wallpaper $img; sleep 5
     ## Change According To Battery Percentage
     else
         num=$(($BATTERY/20+1))
-        set_wallpaper_bat $num; sleep 5
+        set_wallpaper $num; sleep 5
     fi
 }
 
@@ -116,18 +111,15 @@ done
 
 ## Style 3 - Cup Black #############################################
 elif  [[ $1 = "-cup_black" ]]; then
-function set_wallpaper_charge {
-    $SETTER $DIR/images/cup_black/charge_$1.png
-}
 
-function set_wallpaper_bat {
+function set_wallpaper {
     $SETTER $DIR/images/cup_black/battery_$1.png
 }
 
 function animate_wallpaper {
-    for i in {1..5}; do
+    for i in {6..10}; do
         # cycle through charging images
-        set_wallpaper_charge $i; sleep 0.8
+        set_wallpaper $i; sleep 0.8
     done
 }
 
@@ -136,13 +128,13 @@ function main {
     if [[ $CHARGE = *"Charging"* ]] && [[ $BATTERY -lt "100" ]]; then
         animate_wallpaper
     ## Stop Animation When Fully Charged
-    elif [[ $CHARGE = *"Charging"* ]] && [[ $BATTERY -eq "100" ]]; then
-        num="5"
-        set_wallpaper_charge $num; sleep 5
+    elif [[ $BATTERY -eq "100" ]]; then
+        img="10"
+        set_wallpaper $img; sleep 5
     ## Change According To Battery Percentage
     else
         num=$(($BATTERY/20+1))
-        set_wallpaper_bat $num; sleep 5
+        set_wallpaper $num; sleep 5
     fi
 }
 
@@ -152,18 +144,15 @@ done
 
 ## Style 4 - Cup Dark #############################################
 elif  [[ $1 = "-cup_dark" ]]; then
-function set_wallpaper_charge {
-    $SETTER $DIR/images/cup_dark/charge_$1.png
-}
 
-function set_wallpaper_bat {
+function set_wallpaper {
     $SETTER $DIR/images/cup_dark/battery_$1.png
 }
 
 function animate_wallpaper {
-    for i in {1..5}; do
+    for i in {6..10}; do
         # cycle through charging images
-        set_wallpaper_charge $i; sleep 0.8
+        set_wallpaper $i; sleep 0.8
     done
 }
 
@@ -172,13 +161,13 @@ function main {
     if [[ $CHARGE = *"Charging"* ]] && [[ $BATTERY -lt "100" ]]; then
         animate_wallpaper
     ## Stop Animation When Fully Charged
-    elif [[ $CHARGE = *"Charging"* ]] && [[ $BATTERY -eq "100" ]]; then
-        num="5"
-        set_wallpaper_charge $num; sleep 5
+    elif [[ $BATTERY -eq "100" ]]; then
+        img="10"
+        set_wallpaper $img; sleep 5
     ## Change According To Battery Percentage
     else
         num=$(($BATTERY/20+1))
-        set_wallpaper_bat $num; sleep 5
+        set_wallpaper $num; sleep 5
     fi
 }
 
@@ -188,18 +177,15 @@ done
 
 ## Style 5 - Egg #############################################
 elif  [[ $1 = "-egg" ]]; then
-function set_wallpaper_charge {
-    $SETTER $DIR/images/egg/charge_$1.png
-}
 
-function set_wallpaper_bat {
+function set_wallpaper {
     $SETTER $DIR/images/egg/battery_$1.png
 }
 
 function animate_wallpaper {
-    for i in {1..4}; do
+    for i in {5..8}; do
         # cycle through charging images
-        set_wallpaper_charge $i; sleep 0.8
+        set_wallpaper $i; sleep 0.8
     done
 }
 
@@ -208,13 +194,13 @@ function main {
     if [[ $CHARGE = *"Charging"* ]] && [[ $BATTERY -lt "100" ]]; then
         animate_wallpaper
     ## Stop Animation When Fully Charged
-    elif [[ $CHARGE = *"Charging"* ]] && [[ $BATTERY -eq "100" ]]; then
-        num="4"
-        set_wallpaper_charge $num; sleep 5
+    elif [[ $BATTERY -eq "100" ]]; then
+        img="8"
+        set_wallpaper $img; sleep 5
     ## Change According To Battery Percentage
     else
         num=$(($BATTERY/25+1))
-        set_wallpaper_bat $num; sleep 5
+        set_wallpaper $num; sleep 5
     fi
 }
 
@@ -224,18 +210,15 @@ done
 
 ## Style 6 - Faded #############################################
 elif  [[ $1 = "-faded" ]]; then
-function set_wallpaper_charge {
-    $SETTER $DIR/images/faded/battery_$1.png
-}
 
-function set_wallpaper_bat {
+function set_wallpaper {
     $SETTER $DIR/images/faded/battery_$1.png
 }
 
 function animate_wallpaper {
     for i in {1..4}; do
         # cycle through charging images
-        set_wallpaper_charge $i; sleep 0.8
+        set_wallpaper $i; sleep 0.8
     done
 }
 
@@ -244,12 +227,13 @@ function main {
     if [[ $CHARGE = *"Charging"* ]] && [[ $BATTERY -lt "100" ]]; then
         animate_wallpaper
     ## Stop Animation When Fully Charged
-    elif [[ $CHARGE = *"Charging"* ]] && [[ $BATTERY -eq "100" ]]; then
-        $SETTER $DIR/images/faded/charge.png; sleep 5
+    elif [[ $BATTERY -eq "100" ]]; then
+        img="5"
+        set_wallpaper $img; sleep 5
     ## Change According To Battery Percentage
     else
         num=$(($BATTERY/25+1))
-        set_wallpaper_bat $num; sleep 5
+        set_wallpaper $num; sleep 5
     fi
 }
 
@@ -259,18 +243,15 @@ done
 
 ## Style 7 - Industrial #############################################
 elif  [[ $1 = "-industrial" ]]; then
-function set_wallpaper_charge {
-    $SETTER $DIR/images/industrial/charge_$1.png
-}
 
-function set_wallpaper_bat {
+function set_wallpaper {
     $SETTER $DIR/images/industrial/battery_$1.png
 }
 
 function animate_wallpaper {
-    for i in {1..5}; do
+    for i in {6..10}; do
         # cycle through charging images
-        set_wallpaper_charge $i; sleep 0.8
+        set_wallpaper $i; sleep 0.8
     done
 }
 
@@ -279,13 +260,13 @@ function main {
     if [[ $CHARGE = *"Charging"* ]] && [[ $BATTERY -lt "100" ]]; then
         animate_wallpaper
     ## Stop Animation When Fully Charged
-    elif [[ $CHARGE = *"Charging"* ]] && [[ $BATTERY -eq "100" ]]; then
-        num="5"
-        set_wallpaper_charge $num; sleep 5
+    elif [[ $BATTERY -eq "100" ]]; then
+        img="10"
+        set_wallpaper $img; sleep 5
     ## Change According To Battery Percentage
     else
         num=$(($BATTERY/20+1))
-        set_wallpaper_bat $num; sleep 5
+        set_wallpaper $num; sleep 5
     fi
 }
 
@@ -295,18 +276,15 @@ done
 
 ## Style 8 - Mechanical #############################################
 elif  [[ $1 = "-mechanical" ]]; then
-function set_wallpaper_charge {
-    $SETTER $DIR/images/mechanical/battery_$1.png
-}
 
-function set_wallpaper_bat {
+function set_wallpaper {
     $SETTER $DIR/images/mechanical/battery_$1.png
 }
 
 function animate_wallpaper {
     for i in {1..4}; do
         # cycle through charging images
-        set_wallpaper_charge $i; sleep 0.8
+        set_wallpaper $i; sleep 0.8
     done
 }
 
@@ -315,12 +293,13 @@ function main {
     if [[ $CHARGE = *"Charging"* ]] && [[ $BATTERY -lt "100" ]]; then
         animate_wallpaper
     ## Stop Animation When Fully Charged
-    elif [[ $CHARGE = *"Charging"* ]] && [[ $BATTERY -eq "100" ]]; then
-        $SETTER $DIR/images/mechanical/charge.png; sleep 5
+    elif [[ $BATTERY -eq "100" ]]; then
+        img="5"
+        set_wallpaper $img; sleep 5
     ## Change According To Battery Percentage
     else
         num=$(($BATTERY/25+1))
-        set_wallpaper_bat $num; sleep 5
+        set_wallpaper $num; sleep 5
     fi
 }
 
@@ -330,18 +309,15 @@ done
 
 ## Style 9 - Paper #############################################
 elif  [[ $1 = "-paper" ]]; then
-function set_wallpaper_charge {
-    $SETTER $DIR/images/paper/battery_$1.png
-}
 
-function set_wallpaper_bat {
+function set_wallpaper {
     $SETTER $DIR/images/paper/battery_$1.png
 }
 
 function animate_wallpaper {
     for i in {1..4}; do
         # cycle through charging images
-        set_wallpaper_charge $i; sleep 0.8
+        set_wallpaper $i; sleep 0.8
     done
 }
 
@@ -350,12 +326,13 @@ function main {
     if [[ $CHARGE = *"Charging"* ]] && [[ $BATTERY -lt "100" ]]; then
         animate_wallpaper
     ## Stop Animation When Fully Charged
-    elif [[ $CHARGE = *"Charging"* ]] && [[ $BATTERY -eq "100" ]]; then
-        $SETTER $DIR/images/paper/charge.png; sleep 5
+    elif [[ $BATTERY -eq "100" ]]; then
+        img="5"
+        set_wallpaper $img; sleep 5
     ## Change According To Battery Percentage
     else
         num=$(($BATTERY/25+1))
-        set_wallpaper_bat $num; sleep 5
+        set_wallpaper $num; sleep 5
     fi
 }
 
@@ -365,18 +342,15 @@ done
 
 ## Style 10 - Slash #############################################
 elif  [[ $1 = "-slash" ]]; then
-function set_wallpaper_charge {
-    $SETTER $DIR/images/slash/battery_$1.png
-}
 
-function set_wallpaper_bat {
+function set_wallpaper {
     $SETTER $DIR/images/slash/battery_$1.png
 }
 
 function animate_wallpaper {
     for i in {1..5}; do
         # cycle through charging images
-        set_wallpaper_charge $i; sleep 0.8
+        set_wallpaper $i; sleep 0.8
     done
 }
 
@@ -385,13 +359,13 @@ function main {
     if [[ $CHARGE = *"Charging"* ]] && [[ $BATTERY -lt "100" ]]; then
         animate_wallpaper
     ## Stop Animation When Fully Charged
-    elif [[ $CHARGE = *"Charging"* ]] && [[ $BATTERY -eq "100" ]]; then
-        num="5"
-        set_wallpaper_charge $num; sleep 5
+    elif [[ $BATTERY -eq "100" ]]; then
+        img="5"
+        set_wallpaper $img; sleep 5
     ## Change According To Battery Percentage
     else
         num=$(($BATTERY/20+1))
-        set_wallpaper_bat $num; sleep 5
+        set_wallpaper $num; sleep 5
     fi
 }
 
@@ -401,18 +375,15 @@ done
 
 ## Style 11 - Bonsai #############################################
 elif  [[ $1 = "-bonsai" ]]; then
-function set_wallpaper_charge {
-    $SETTER $DIR/images/bonsai/battery_$1.png
-}
 
-function set_wallpaper_bat {
+function set_wallpaper {
     $SETTER $DIR/images/bonsai/battery_$1.png
 }
 
 function animate_wallpaper {
-    for i in {1,10}; do
+    for i in {1,9}; do
         # cycle through charging images
-        set_wallpaper_charge $i; sleep 0.8
+        set_wallpaper $i; sleep 0.8
     done
 }
 
@@ -421,13 +392,13 @@ function main {
     if [[ $CHARGE = *"Charging"* ]] && [[ $BATTERY -lt "100" ]]; then
         animate_wallpaper
     ## Stop Animation When Fully Charged
-    elif [[ $CHARGE = *"Charging"* ]] && [[ $BATTERY -eq "100" ]]; then
-        num="10"
-        set_wallpaper_charge $num; sleep 5
+    elif [[ $BATTERY -eq "100" ]]; then
+        img="9"
+        set_wallpaper $img; sleep 5
     ## Change According To Battery Percentage
     else
         num=$(($BATTERY/10))
-        set_wallpaper_bat $num; sleep 5
+        set_wallpaper $num; sleep 5
     fi
 }
 
@@ -437,18 +408,15 @@ done
 
 ## Style 12 - City #############################################
 elif  [[ $1 = "-city" ]]; then
-function set_wallpaper_charge {
-    $SETTER $DIR/images/city/charge_$1.png
-}
 
-function set_wallpaper_bat {
+function set_wallpaper {
     $SETTER $DIR/images/city/battery_$1.png
 }
 
 function animate_wallpaper {
-    for i in {1,2}; do
+    for i in {0,5}; do
         # cycle through charging images
-        set_wallpaper_charge $i; sleep 0.8
+        set_wallpaper $i; sleep 0.8
     done
 }
 
@@ -457,13 +425,13 @@ function main {
     if [[ $CHARGE = *"Charging"* ]] && [[ $BATTERY -lt "100" ]]; then
         animate_wallpaper
     ## Stop Animation When Fully Charged
-    elif [[ $CHARGE = *"Charging"* ]] && [[ $BATTERY -eq "100" ]]; then
-        num="2"
-        set_wallpaper_charge $num; sleep 5
+    elif [[ $BATTERY -eq "100" ]]; then
+        img="5"
+        set_wallpaper $img; sleep 5
     ## Change According To Battery Percentage
     else
         num=$(($BATTERY/20+1))
-        set_wallpaper_bat $num; sleep 5
+        set_wallpaper $num; sleep 5
     fi
 }
 
@@ -473,18 +441,15 @@ done
 
 ## Style 13 - space #############################################
 elif  [[ $1 = "-space" ]]; then
-function set_wallpaper_charge {
-    $SETTER $DIR/images/space/charge_$1.png
-}
 
-function set_wallpaper_bat {
+function set_wallpaper {
     $SETTER $DIR/images/space/battery_$1.png
 }
 
 function animate_wallpaper {
-    for i in {1,2}; do
+    for i in {5,6}; do
         # cycle through charging images
-        set_wallpaper_charge $i; sleep 0.8
+        set_wallpaper $i; sleep 0.8
     done
 }
 
@@ -493,13 +458,13 @@ function main {
     if [[ $CHARGE = *"Charging"* ]] && [[ $BATTERY -lt "100" ]]; then
         animate_wallpaper
     ## Stop Animation When Fully Charged
-    elif [[ $CHARGE = *"Charging"* ]] && [[ $BATTERY -eq "100" ]]; then
-        num="2"
-        set_wallpaper_charge $num; sleep 5
+    elif [[ $BATTERY -eq "100" ]]; then
+        img="6"
+        set_wallpaper $img; sleep 5
     ## Change According To Battery Percentage
     else
         num=$(($BATTERY/20+1))
-        set_wallpaper_bat $num; sleep 5
+        set_wallpaper $num; sleep 5
     fi
 }
 
