@@ -432,7 +432,79 @@ function main {
 }
 
 while true; do
-	main && exec $(pwd)/test.sh -bonsai
+	main && exec $DIR/battery_wall.sh -bonsai
+done
+
+## Style 12 - City #############################################
+elif  [[ $1 = "-city" ]]; then
+function set_wallpaper_charge {
+    $SETTER $DIR/images/city/charge_$1.png
+}
+
+function set_wallpaper_bat {
+    $SETTER $DIR/images/city/battery_$1.png
+}
+
+function animate_wallpaper {
+    for i in {1,2}; do
+        # cycle through charging images
+        set_wallpaper_charge $i; sleep 0.8
+    done
+}
+
+function main {
+	## Charging Animation
+    if [[ $CHARGE = *"Charging"* ]] && [[ $BATTERY -lt "100" ]]; then
+        animate_wallpaper
+    ## Stop Animation When Fully Charged
+    elif [[ $CHARGE = *"Charging"* ]] && [[ $BATTERY -eq "100" ]]; then
+        num="2"
+        set_wallpaper_charge $num; sleep 5
+    ## Change According To Battery Percentage
+    else
+        num=$(($BATTERY/20+1))
+        set_wallpaper_bat $num; sleep 5
+    fi
+}
+
+while true; do
+	main && exec $DIR/battery_wall.sh -city
+done
+
+## Style 13 - space #############################################
+elif  [[ $1 = "-space" ]]; then
+function set_wallpaper_charge {
+    $SETTER $DIR/images/space/charge_$1.png
+}
+
+function set_wallpaper_bat {
+    $SETTER $DIR/images/space/battery_$1.png
+}
+
+function animate_wallpaper {
+    for i in {1,2}; do
+        # cycle through charging images
+        set_wallpaper_charge $i; sleep 0.8
+    done
+}
+
+function main {
+	## Charging Animation
+    if [[ $CHARGE = *"Charging"* ]] && [[ $BATTERY -lt "100" ]]; then
+        animate_wallpaper
+    ## Stop Animation When Fully Charged
+    elif [[ $CHARGE = *"Charging"* ]] && [[ $BATTERY -eq "100" ]]; then
+        num="2"
+        set_wallpaper_charge $num; sleep 5
+    ## Change According To Battery Percentage
+    else
+        num=$(($BATTERY/20+1))
+        set_wallpaper_bat $num; sleep 5
+    fi
+}
+
+while true; do
+	main && exec $DIR/battery_wall.sh -space
 done
 
 ## Else Show This #############################################
@@ -444,6 +516,7 @@ Available options:
 -cartoon	-colours	-cup_black
 -cup_dark	-egg		-faded
 -industrial	-mechanical	-paper
--slash		-bonsai
+-slash		-bonsai		-city
+-space
 "
 fi
