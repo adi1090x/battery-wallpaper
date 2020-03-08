@@ -439,7 +439,73 @@ while true; do
 	main && exec $(pwd)/test.sh -city
 done
 
-## Style 13 - space #############################################
+## Style 13 - City Alt #############################################
+elif  [[ $1 = "-city_alt" ]]; then
+
+function set_wallpaper {
+    $SETTER $DIR/images/city_alt/battery_$1.png
+}
+
+function animate_wallpaper {
+    for i in {0,5}; do
+        # cycle through charging images
+        set_wallpaper $i; sleep 0.8
+    done
+}
+
+function main {
+	## Charging Animation
+    if [[ $CHARGE = *"Charging"* ]] && [[ $BATTERY -lt "100" ]]; then
+        animate_wallpaper
+    ## Stop Animation When Fully Charged
+    elif [[ $BATTERY -eq "100" ]]; then
+        img="5"
+        set_wallpaper $img; sleep 5
+    ## Change According To Battery Percentage
+    else
+        num=$(($BATTERY/20+1))
+        set_wallpaper $num; sleep 5
+    fi
+}
+
+while true; do
+	main && exec $(pwd)/test.sh -city_alt
+done
+
+## Style 14 - Pixel City #############################################
+elif  [[ $1 = "-pixel_city" ]]; then
+
+function set_wallpaper {
+    $SETTER $DIR/images/pixel_city/battery_$1.png
+}
+
+function animate_wallpaper {
+    for i in {1,5}; do
+        # cycle through charging images
+        set_wallpaper $i; sleep 0.8
+    done
+}
+
+function main {
+	## Charging Animation
+    if [[ $CHARGE = *"Charging"* ]] && [[ $BATTERY -lt "100" ]]; then
+        animate_wallpaper
+    ## Stop Animation When Fully Charged
+    elif [[ $BATTERY -eq "100" ]]; then
+        img="5"
+        set_wallpaper $img; sleep 5
+    ## Change According To Battery Percentage
+    else
+        num=$(($BATTERY/20+1))
+        set_wallpaper $num; sleep 5
+    fi
+}
+
+while true; do
+	main && exec $(pwd)/test.sh -pixel_city
+done
+
+## Style 15 - space #############################################
 elif  [[ $1 = "-space" ]]; then
 
 function set_wallpaper {
@@ -482,6 +548,6 @@ Available options:
 -cup_dark	-egg		-faded
 -industrial	-mechanical	-paper
 -slash		-bonsai		-city
--space
+-city_alt	-pixel_city	-space
 "
 fi
