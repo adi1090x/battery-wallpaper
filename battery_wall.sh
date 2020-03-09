@@ -12,7 +12,7 @@ case "$OSTYPE" in
 esac
 
 case "$OSTYPE" in
-	darwin*) BATTERY="$(pmset -g batt | egrep "([0-9]+\%).*" -o --colour=auto | cut -f1 -d';')" ;;
+	darwin*) BATTERY="$(pmset -g batt | egrep "([0-9]+\%).*" -o --colour=auto | cut -f1 -d';'| tr -d \%,)" ;;
 	linux*) BATTERY="$(acpi | awk -F ' ' 'END {print $4}' | tr -d \%,)" ;;
 	*) BATTERY_PERCENT="?" ;;
 esac
