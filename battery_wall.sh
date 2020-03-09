@@ -24,8 +24,10 @@ case "$OSTYPE" in
 esac
 
 ## For XFCE
-SCREEN="$(xrandr --listactivemonitors | awk -F ' ' 'END {print $1}' | tr -d \:)"
-MONITOR="$(xrandr --listactivemonitors | awk -F ' ' 'END {print $2}' | tr -d \*+)"
+if [[ "$OSTYPE" == "linux"* ]]; then
+    SCREEN="$(xrandr --listactivemonitors | awk -F ' ' 'END {print $1}' | tr -d \:)"
+    MONITOR="$(xrandr --listactivemonitors | awk -F ' ' 'END {print $2}' | tr -d \*+)"
+fi
 
 case "$OSTYPE" in 
 	darwin*) SETTER="wallpaper set" ;;
