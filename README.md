@@ -24,8 +24,9 @@
 + When not charging, the wallpaper/icon changes according to battery percentage.
 + Users can add their own icons/styles/wallpapers.
 + Tested on :
-  - **`Window Managers`** : `Openbox`, `i3wm`, `bspwm`, `awesomewm`, `Fluxbox`, `Fvwm`, `Swaywm`
-  - **`Desktop Environments`** : `KDE`, `Pantheon`, `Gnome`, `Deepin`, `Cinnamon`, `XFCE`, `LXDE`, `MATE`
+  - **`Window Managers`** : Works on all window managers (tested on all WMs Archcraft have)
+  - **`Wayland Compositors`** : `sway`, `wayfire`, `river`, `newm`, `hyprland`
+  - **`Desktop Environments`** : `KDE`, `Pantheon`, `Gnome`, `Deepin`, `Cinnamon`, `XFCE`, `LXDE`, `MATE`, `Zorin`, `Budgie`
 
 ### Dependencies
 
@@ -73,7 +74,7 @@ $ bwall
 ┣┻┓┣━┫ ┃  ┃ ┣╸ ┣┳┛┗┳┛   ┃╻┃┣━┫┃  ┃  ┣━┛┣━┫┣━┛┣╸ ┣┳┛
 ┗━┛╹ ╹ ╹  ╹ ┗━╸╹┗╸ ╹    ┗┻┛╹ ╹┗━╸┗━╸╹  ╹ ╹╹  ┗━╸╹┗╸
 
-Bwall V2.0   : Set desktop wallpaper according to battery percentage.
+Bwall V3.0   : Set desktop wallpaper according to battery percentage.
 Developed By : Aditya Shakya (@adi1090x)
 
 Usage : bwall.sh [-h] [-d] delay [-s style]
