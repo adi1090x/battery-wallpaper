@@ -173,6 +173,11 @@ set_wallpaper() {
 		{ reset_color; exit 1; }
 	fi
 
+  # check if image is the same as cache
+  if [[ $(cat "$cfile") == $image.$FORMAT ]]; then
+    return
+  fi
+
 	# set wallpaper with setter
 	if [[ -n "$FORMAT" ]]; then
 		$SETTER "$image.$FORMAT"
